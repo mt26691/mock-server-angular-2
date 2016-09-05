@@ -32,9 +32,21 @@ module.exports = {
 
     //let user logout
     'getPost': function (req, res) {
-        return null;
+        let id = req.params.id;
+        var data = { id: id, title: "post " + id, content: "content " + id }
+        return res.json({ data: data });
     },
     'savePost': function (req, res) {
-        return null;
+        var data = req.body;
+        if (req.body.id == null) {
+            data.id = "new";
+            data.title = "Create post";
+        }
+        else {
+            data.id = "update";
+            data.title = "Update post";
+        }
+
+        return res.json({ data: data });
     }
 };

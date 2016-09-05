@@ -5,4 +5,8 @@ var postController = require("../api/postController");
 /* GET posts listing. */
 router.get('/', postController.getPosts);
 
+router.get('/:id', postController.getPost);
+
+router.post("/",postController.savePost);
+
 module.exports = router;
