@@ -21,9 +21,9 @@ module.exports = {
                 content: "content 2",
             },
             {
-                id: "2",
-                title: "post 2",
-                content: "content 2",
+                id: "3",
+                title: "post 3",
+                content: "content 3",
             },
         ]
         //return data to client
@@ -47,6 +47,12 @@ module.exports = {
             data.title = "Update post";
         }
 
+        return res.json({ data: data });
+    },
+    'delete': function (req, res) {
+        let id = req.params.id;
+        var data = { id: id, message: "Post deleted" };
+        console.log('post deleted');
         return res.json({ data: data });
     }
 };
